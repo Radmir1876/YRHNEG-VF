@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание Заказа</title>
+</head>
+<body>
+<h1>Заказ создан</h1>
+<p>Товар: {{ order.product.name }}</p>
+<p>Количество: {{ order.quantity }}</p>
+<p>Общая стоимость: {{ order.total_cost }} руб.</p>
+<p>Имя заказчика: {{ order.customer_name }}</p>
+<p>Телефон заказчика: {{ order.customer_phone }}</p>
+</body>
+</html>

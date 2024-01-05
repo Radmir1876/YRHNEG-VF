@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание заказа</title>
+</head>
+<body>
+<h1>Создание заказа</h1>
+<form method="post">
+  {% csrf_token %}
+  <label for="product">Товар:</label>
+  <select name="product" id="product">
+    {% for product in products %}
+      <option value="{{ product.id }}">{{ product.name }} ({{ product.price }} руб.)</option>
+    {% endfor %}
+  </select>
+  <br>
+  <label for="quantity">Количество:</label>
+  <input type="number" name="quantity" id="quantity" min="1" required>
+  <br>
+  <label for="customer_name">Имя заказчика:</label>
+  <input type="text" name="customer_name" id="customer_name" required>
+  <br>
+  <label for="customer_phone">Телефон заказчика:</label>
+  <input type="tel" name="customer_phone" id="customer_phone" required>
+  <br>
+  <input type="submit" value="Создать заказ">
+</form>
+</body>
+</html>
